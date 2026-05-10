@@ -68,130 +68,174 @@
         </div>
       </div>
 
-      <!-- SVG Illustration -->
+      <!-- SVG Illustration — Network constellation -->
       <div class="hero-visual">
-        <svg viewBox="0 0 660 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SAP ecosystem diagram showing S/4HANA connected to Finance, SuccessFactors, Supply Chain, BTP, Ariba and Sales modules">
+        <svg viewBox="0 0 580 450" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SAP ecosystem network showing S/4HANA connected to Finance, SuccessFactors, Supply Chain, BTP, Ariba and Sales modules">
           <defs>
-            <linearGradient id="g-main" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0070F2"/><stop offset="100%" stop-color="#00B5A5"/></linearGradient>
-            <linearGradient id="g-blue" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0070F2"/><stop offset="100%" stop-color="#0050C8"/></linearGradient>
-            <linearGradient id="g-teal" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00C8B8"/><stop offset="100%" stop-color="#00B5A5"/></linearGradient>
-            <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
-            <filter id="f-card" x="-8%" y="-10%" width="116%" height="120%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#0070F2" flood-opacity="0.18"/></filter>
-            <pattern id="dot-bg" x="0" y="0" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.04)"/></pattern>
-            <path id="ap1" d="M 172,130 L 296,168"/>
-            <path id="ap2" d="M 172,226 L 262,226"/>
-            <path id="ap3" d="M 172,322 L 296,284"/>
-            <path id="ap4" d="M 488,130 L 364,168"/>
-            <path id="ap5" d="M 488,226 L 398,226"/>
-            <path id="ap6" d="M 488,322 L 364,284"/>
+            <!-- Center hub gradient -->
+            <radialGradient id="rg-hub" cx="38%" cy="32%" r="68%">
+              <stop offset="0%" stop-color="#2196F3"/>
+              <stop offset="55%" stop-color="#0070F2"/>
+              <stop offset="100%" stop-color="#00B5A5"/>
+            </radialGradient>
+            <!-- Ambient glow fills -->
+            <radialGradient id="rg-gl" cx="25%" cy="45%" r="55%">
+              <stop offset="0%" stop-color="#0070F2" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="#0070F2" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="rg-gr" cx="75%" cy="55%" r="55%">
+              <stop offset="0%" stop-color="#00B5A5" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#00B5A5" stop-opacity="0"/>
+            </radialGradient>
+            <!-- Drop shadow for nodes -->
+            <filter id="f-node" x="-40%" y="-40%" width="180%" height="180%">
+              <feGaussianBlur stdDeviation="5" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Hub inner glow -->
+            <filter id="f-hub" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="9" result="b"/>
+              <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+            <!-- Subtle bg pattern -->
+            <pattern id="pg" x="0" y="0" width="22" height="22" patternUnits="userSpaceOnUse">
+              <circle cx="11" cy="11" r="0.9" fill="rgba(255,255,255,0.045)"/>
+            </pattern>
+            <!-- Hub ring gradient -->
+            <linearGradient id="rg-ring" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#0070F2" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#00B5A5" stop-opacity="0.5"/>
+            </linearGradient>
+            <!-- Spoke animation paths: center (290,225) → each node -->
+            <path id="s1" d="M 290,225 Q 258,162 218,100"/>
+            <path id="s2" d="M 290,225 Q 218,233 148,225"/>
+            <path id="s3" d="M 290,225 Q 258,288 218,350"/>
+            <path id="s4" d="M 290,225 Q 322,288 362,350"/>
+            <path id="s5" d="M 290,225 Q 362,217 432,225"/>
+            <path id="s6" d="M 290,225 Q 322,162 362,100"/>
           </defs>
-          <!-- Background panel -->
-          <rect width="660" height="460" rx="20" fill="#071830"/>
-          <rect width="660" height="460" rx="20" fill="url(#dot-bg)"/>
-          <!-- Ambient glows -->
-          <ellipse cx="330" cy="226" rx="210" ry="165" fill="#0070F2" opacity="0.06"/>
-          <ellipse cx="330" cy="226" rx="120" ry="95" fill="#00B5A5" opacity="0.04"/>
-          <!-- Top chrome bar -->
-          <rect x="0" y="0" width="660" height="38" rx="20" fill="rgba(255,255,255,0.05)"/>
-          <rect x="0" y="22" width="660" height="16" fill="rgba(255,255,255,0.03)"/>
-          <rect x="0" y="22" width="660" height="1" fill="rgba(255,255,255,0.09)"/>
-          <!-- Live indicator -->
-          <circle cx="22" cy="19" r="5" fill="#00B5A5" opacity="0.95"/>
-          <circle cx="22" cy="19" r="5" fill="#00B5A5" opacity="0.35"><animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.35;0;0.35" dur="2s" repeatCount="indefinite"/></circle>
-          <text x="35" y="24" font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="500" fill="rgba(255,255,255,0.55)" letter-spacing="0.09em">SAP ECOSYSTEM · LIVE</text>
-          <!-- Window controls -->
-          <circle cx="620" cy="19" r="4" fill="rgba(255,255,255,0.1)"/>
-          <circle cx="634" cy="19" r="4" fill="rgba(255,255,255,0.1)"/>
-          <circle cx="648" cy="19" r="4" fill="rgba(255,255,255,0.1)"/>
 
-          <!-- CONNECTION LINES -->
-          <line x1="172" y1="130" x2="296" y2="168" stroke="rgba(0,112,242,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="172" y1="226" x2="262" y2="226" stroke="rgba(0,112,242,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="172" y1="322" x2="296" y2="284" stroke="rgba(0,112,242,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="488" y1="130" x2="364" y2="168" stroke="rgba(0,181,165,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="488" y1="226" x2="398" y2="226" stroke="rgba(0,181,165,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <line x1="488" y1="322" x2="364" y2="284" stroke="rgba(0,181,165,0.45)" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <!-- ── BACKGROUND ── -->
+          <rect width="580" height="450" rx="22" fill="#060F1E"/>
+          <rect width="580" height="450" rx="22" fill="url(#pg)"/>
+          <rect width="580" height="450" rx="22" fill="url(#rg-gl)"/>
+          <rect width="580" height="450" rx="22" fill="url(#rg-gr)"/>
 
-          <!-- Animated data dots -->
-          <circle r="3.5" fill="#4DA8FF" opacity="0.9"><animateMotion dur="1.9s" repeatCount="indefinite"><mpath href="#ap1"/></animateMotion></circle>
-          <circle r="3.5" fill="#4DA8FF" opacity="0.9"><animateMotion dur="1.6s" begin="0.4s" repeatCount="indefinite"><mpath href="#ap2"/></animateMotion></circle>
-          <circle r="3.5" fill="#4DA8FF" opacity="0.9"><animateMotion dur="2.1s" begin="0.8s" repeatCount="indefinite"><mpath href="#ap3"/></animateMotion></circle>
-          <circle r="3.5" fill="#4DD9CC" opacity="0.9"><animateMotion dur="1.9s" begin="1.0s" repeatCount="indefinite"><mpath href="#ap4"/></animateMotion></circle>
-          <circle r="3.5" fill="#4DD9CC" opacity="0.9"><animateMotion dur="1.6s" begin="1.4s" repeatCount="indefinite"><mpath href="#ap5"/></animateMotion></circle>
-          <circle r="3.5" fill="#4DD9CC" opacity="0.9"><animateMotion dur="2.1s" begin="1.8s" repeatCount="indefinite"><mpath href="#ap6"/></animateMotion></circle>
+          <!-- Concentric orbit rings (very subtle) -->
+          <circle cx="290" cy="225" r="148" stroke="rgba(255,255,255,0.045)" stroke-width="1" stroke-dasharray="4 8" fill="none"/>
+          <circle cx="290" cy="225" r="96" stroke="rgba(255,255,255,0.06)" stroke-width="1" stroke-dasharray="3 6" fill="none"/>
+          <circle cx="290" cy="225" r="52" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
 
-          <!-- HEXAGON — flat-top, center (330,226), R=68 -->
-          <!-- Outer glow -->
-          <polygon points="296,168 364,168 398,226 364,284 296,284 262,226" fill="#0070F2" opacity="0.1" filter="url(#f-glow)"/>
-          <!-- Main hex fill -->
-          <polygon class="hex-core" points="296,168 364,168 398,226 364,284 296,284 262,226" fill="url(#g-main)"/>
-          <!-- Inner hex border ring -->
-          <polygon points="310,183 350,183 374,226 350,269 310,269 286,226" fill="none" stroke="rgba(255,255,255,0.22)" stroke-width="1"/>
-          <!-- Hex vertex connector nodes -->
-          <circle cx="296" cy="168" r="4.5" fill="#4DA8FF" stroke="#071830" stroke-width="1.5"/>
-          <circle cx="262" cy="226" r="4.5" fill="#4DA8FF" stroke="#071830" stroke-width="1.5"/>
-          <circle cx="296" cy="284" r="4.5" fill="#4DA8FF" stroke="#071830" stroke-width="1.5"/>
-          <circle cx="364" cy="168" r="4.5" fill="#4DD9CC" stroke="#071830" stroke-width="1.5"/>
-          <circle cx="398" cy="226" r="4.5" fill="#4DD9CC" stroke="#071830" stroke-width="1.5"/>
-          <circle cx="364" cy="284" r="4.5" fill="#4DD9CC" stroke="#071830" stroke-width="1.5"/>
-          <!-- Hex center text -->
-          <text x="330" y="217" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="15" font-weight="700" fill="#fff" letter-spacing="0.02em">S/4HANA</text>
-          <text x="330" y="236" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9" font-weight="600" fill="rgba(255,255,255,0.6)" letter-spacing="0.14em">CORE PLATFORM</text>
-          <circle cx="330" cy="254" r="3.5" fill="rgba(255,255,255,0.45)"/>
+          <!-- ── TOP CHROME BAR ── -->
+          <rect x="0" y="0" width="580" height="38" rx="22" fill="rgba(255,255,255,0.04)"/>
+          <rect x="0" y="22" width="580" height="16" fill="rgba(255,255,255,0.025)"/>
+          <rect x="0" y="22" width="580" height="1" fill="rgba(255,255,255,0.09)"/>
+          <!-- Live status dot -->
+          <circle cx="21" cy="19" r="4.5" fill="#00D1A0"/>
+          <circle cx="21" cy="19" r="4.5" fill="#00D1A0" opacity="0.3">
+            <animate attributeName="r" values="4.5;10;4.5" dur="2.4s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.3;0;0.3" dur="2.4s" repeatCount="indefinite"/>
+          </circle>
+          <text x="33" y="24" font-family="'IBM Plex Mono',monospace" font-size="9.5" font-weight="500" fill="rgba(255,255,255,0.5)" letter-spacing="0.1em">SAP ECOSYSTEM · LIVE</text>
+          <!-- Traffic lights (right) -->
+          <circle cx="540" cy="19" r="3.5" fill="rgba(255,255,255,0.09)"/>
+          <circle cx="552" cy="19" r="3.5" fill="rgba(255,255,255,0.09)"/>
+          <circle cx="564" cy="19" r="3.5" fill="rgba(255,255,255,0.09)"/>
 
-          <!-- ===== LEFT MODULE CARDS ===== -->
-          <!-- FI · Finance -->
-          <rect x="10" y="96" width="162" height="68" rx="10" fill="#112240" stroke="rgba(0,112,242,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="10" y="96" width="3" height="68" rx="1.5" fill="url(#g-blue)"/>
-          <text x="23" y="118" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DA8FF" letter-spacing="0.04em">FI</text>
-          <text x="42" y="118" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">Finance</text>
-          <text x="23" y="136" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">General Ledger · AP/AR</text>
-          <text x="23" y="151" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Controlling · Treasury</text>
-          <!-- SCM · Supply Chain -->
-          <rect x="10" y="192" width="162" height="68" rx="10" fill="#112240" stroke="rgba(0,112,242,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="10" y="192" width="3" height="68" rx="1.5" fill="url(#g-blue)"/>
-          <text x="23" y="214" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DA8FF" letter-spacing="0.04em">SCM</text>
-          <text x="52" y="214" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">Supply Chain</text>
-          <text x="23" y="232" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">MM · EWM · TM · IBP</text>
-          <text x="23" y="247" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Procurement · Logistics</text>
-          <!-- AR · Ariba Procurement -->
-          <rect x="10" y="288" width="162" height="68" rx="10" fill="#112240" stroke="rgba(0,112,242,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="10" y="288" width="3" height="68" rx="1.5" fill="url(#g-blue)"/>
-          <text x="23" y="310" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DA8FF" letter-spacing="0.04em">AR</text>
-          <text x="42" y="310" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">Procurement</text>
-          <text x="23" y="328" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">Sourcing · Contracts</text>
-          <text x="23" y="343" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Supplier Management</text>
+          <!-- ── OUTER RING CONNECTIONS (between satellite nodes) ── -->
+          <path d="M 218,100 Q 290,74 362,100" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <path d="M 148,225 Q 130,155 218,100" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <path d="M 148,225 Q 130,295 218,350" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <path d="M 218,350 Q 290,376 362,350" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <path d="M 432,225 Q 450,295 362,350" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
+          <path d="M 432,225 Q 450,155 362,100" stroke="rgba(255,255,255,0.05)" stroke-width="1" fill="none"/>
 
-          <!-- ===== RIGHT MODULE CARDS ===== -->
-          <!-- SF · SuccessFactors -->
-          <rect x="488" y="96" width="162" height="68" rx="10" fill="#102430" stroke="rgba(0,181,165,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="647" y="96" width="3" height="68" rx="1.5" fill="url(#g-teal)"/>
-          <text x="501" y="118" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.04em">SF</text>
-          <text x="520" y="118" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">SuccessFactors</text>
-          <text x="501" y="136" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">HCM · Talent · Payroll</text>
-          <text x="501" y="151" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Learning · Recruiting</text>
-          <!-- BTP · SAP Platform -->
-          <rect x="488" y="192" width="162" height="68" rx="10" fill="#102430" stroke="rgba(0,181,165,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="647" y="192" width="3" height="68" rx="1.5" fill="url(#g-teal)"/>
-          <text x="501" y="214" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.04em">BTP</text>
-          <text x="530" y="214" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">SAP Platform</text>
-          <text x="501" y="232" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">CAP · Extensions · BTP</text>
-          <text x="501" y="247" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Analytics · Automation</text>
-          <!-- SD·CX · Sales -->
-          <rect x="488" y="288" width="162" height="68" rx="10" fill="#102430" stroke="rgba(0,181,165,0.4)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="647" y="288" width="3" height="68" rx="1.5" fill="url(#g-teal)"/>
-          <text x="501" y="310" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.04em">SD · CX</text>
-          <text x="548" y="310" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">Sales &amp; CX</text>
-          <text x="501" y="328" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.45)">Order Mgmt · Commerce</text>
-          <text x="501" y="343" font-family="'IBM Plex Mono',monospace" font-size="9.5" fill="rgba(255,255,255,0.28)">Customer Experience</text>
+          <!-- ── SPOKE CONNECTION LINES (center → nodes) ── -->
+          <path d="M 290,225 Q 258,162 218,100" stroke="rgba(0,112,242,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M 290,225 Q 218,233 148,225" stroke="rgba(0,112,242,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M 290,225 Q 258,288 218,350" stroke="rgba(0,112,242,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M 290,225 Q 322,288 362,350" stroke="rgba(0,181,165,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M 290,225 Q 362,217 432,225" stroke="rgba(0,181,165,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
+          <path d="M 290,225 Q 322,162 362,100" stroke="rgba(0,181,165,0.4)" stroke-width="1.5" stroke-dasharray="5 5" fill="none"/>
 
-          <!-- Bottom chrome bar -->
-          <rect x="0" y="422" width="660" height="38" rx="20" fill="rgba(255,255,255,0.03)"/>
-          <rect x="0" y="422" width="660" height="1" fill="rgba(255,255,255,0.07)"/>
-          <circle cx="22" cy="441" r="3" fill="#00B5A5" opacity="0.7"/>
-          <text x="34" y="445" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.32)" letter-spacing="0.07em">6 MODULES CONNECTED</text>
-          <text x="516" y="445" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.32)" letter-spacing="0.07em">180+ LIVE</text>
-          <circle cx="650" cy="441" r="3" fill="#0070F2" opacity="0.6"/>
+          <!-- ── ANIMATED DATA PARTICLES ── -->
+          <circle r="3" fill="#60AEFF" opacity="0.95"><animateMotion dur="2.1s" repeatCount="indefinite"><mpath href="#s1"/></animateMotion></circle>
+          <circle r="3" fill="#60AEFF" opacity="0.95"><animateMotion dur="1.8s" begin="0.6s" repeatCount="indefinite"><mpath href="#s2"/></animateMotion></circle>
+          <circle r="3" fill="#60AEFF" opacity="0.95"><animateMotion dur="2.3s" begin="1.1s" repeatCount="indefinite"><mpath href="#s3"/></animateMotion></circle>
+          <circle r="3" fill="#3DDBCC" opacity="0.95"><animateMotion dur="2.1s" begin="1.4s" repeatCount="indefinite"><mpath href="#s4"/></animateMotion></circle>
+          <circle r="3" fill="#3DDBCC" opacity="0.95"><animateMotion dur="1.8s" begin="0.3s" repeatCount="indefinite"><mpath href="#s5"/></animateMotion></circle>
+          <circle r="3" fill="#3DDBCC" opacity="0.95"><animateMotion dur="2.3s" begin="0.9s" repeatCount="indefinite"><mpath href="#s6"/></animateMotion></circle>
+
+          <!-- ── CENTRAL HUB: S/4HANA ── -->
+          <!-- Outer pulse ring -->
+          <circle cx="290" cy="225" r="58" fill="url(#rg-hub)" opacity="0.1">
+            <animate attributeName="r" values="58;70;58" dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.1;0.03;0.1" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Gradient ring border (pulsing) -->
+          <circle cx="290" cy="225" r="58" fill="none" stroke="url(#rg-ring)" stroke-width="1">
+            <animate attributeName="r" values="58;72;58" dur="3.5s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="0.8;0;0.8" dur="3.5s" repeatCount="indefinite"/>
+          </circle>
+          <!-- Main hub circle -->
+          <circle class="hex-core" cx="290" cy="225" r="50" fill="url(#rg-hub)" filter="url(#f-hub)"/>
+          <!-- Hub inner border ring -->
+          <circle cx="290" cy="225" r="43" fill="none" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+          <!-- Hub label -->
+          <text x="290" y="219" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#fff" letter-spacing="0.04em">S/4HANA</text>
+          <text x="290" y="235" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="8.5" font-weight="700" fill="rgba(255,255,255,0.6)" letter-spacing="0.16em">CORE</text>
+          <!-- Hub pulse dot -->
+          <circle cx="290" cy="246" r="2.5" fill="rgba(255,255,255,0.55)">
+            <animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+
+          <!-- ── SATELLITE MODULE NODES ── -->
+          <!-- Node template: dark circle, colored border, code + name text -->
+          <!-- All positions are 148px from center (290,225) at 60° intervals -->
+
+          <!-- FI · Finance — top-left (218, 100) — blue -->
+          <circle cx="218" cy="100" r="36" fill="#0B1A30" stroke="rgba(0,112,242,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="218" cy="100" r="36" fill="rgba(0,112,242,0.07)"/>
+          <text x="218" y="93" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#60AEFF" letter-spacing="0.04em">FI</text>
+          <text x="218" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.62)">Finance</text>
+
+          <!-- SCM · Logistics — left (148, 225) — blue -->
+          <circle cx="148" cy="225" r="36" fill="#0B1A30" stroke="rgba(0,112,242,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="148" cy="225" r="36" fill="rgba(0,112,242,0.07)"/>
+          <text x="148" y="218" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="700" fill="#60AEFF" letter-spacing="0.04em">SCM</text>
+          <text x="148" y="235" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9.5" font-weight="600" fill="rgba(255,255,255,0.62)">Supply Chain</text>
+
+          <!-- SF · HR — bottom-left (218, 350) — blue -->
+          <circle cx="218" cy="350" r="36" fill="#0B1A30" stroke="rgba(0,112,242,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="218" cy="350" r="36" fill="rgba(0,112,242,0.07)"/>
+          <text x="218" y="343" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#60AEFF" letter-spacing="0.04em">SF</text>
+          <text x="218" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9.5" font-weight="600" fill="rgba(255,255,255,0.62)">HR &amp; HCM</text>
+
+          <!-- AR · Ariba — bottom-right (362, 350) — teal -->
+          <circle cx="362" cy="350" r="36" fill="#061A20" stroke="rgba(0,181,165,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="362" cy="350" r="36" fill="rgba(0,181,165,0.07)"/>
+          <text x="362" y="343" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#3DDBCC" letter-spacing="0.04em">AR</text>
+          <text x="362" y="360" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.62)">Ariba</text>
+
+          <!-- BTP · Platform — right (432, 225) — teal -->
+          <circle cx="432" cy="225" r="36" fill="#061A20" stroke="rgba(0,181,165,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="432" cy="225" r="36" fill="rgba(0,181,165,0.07)"/>
+          <text x="432" y="218" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="12" font-weight="700" fill="#3DDBCC" letter-spacing="0.04em">BTP</text>
+          <text x="432" y="235" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="9.5" font-weight="600" fill="rgba(255,255,255,0.62)">Platform</text>
+
+          <!-- CX · Sales — top-right (362, 100) — teal -->
+          <circle cx="362" cy="100" r="36" fill="#061A20" stroke="rgba(0,181,165,0.55)" stroke-width="1.5" filter="url(#f-node)"/>
+          <circle cx="362" cy="100" r="36" fill="rgba(0,181,165,0.07)"/>
+          <text x="362" y="93" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#3DDBCC" letter-spacing="0.04em">CX</text>
+          <text x="362" y="110" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="600" fill="rgba(255,255,255,0.62)">Sales</text>
+
+          <!-- ── BOTTOM STATUS BAR ── -->
+          <rect x="0" y="412" width="580" height="38" rx="22" fill="rgba(255,255,255,0.03)"/>
+          <rect x="0" y="412" width="580" height="1" fill="rgba(255,255,255,0.07)"/>
+          <circle cx="20" cy="431" r="3" fill="#00D1A0" opacity="0.8"/>
+          <text x="32" y="435" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">6 MODULES · ALL CONNECTED</text>
+          <text x="438" y="435" font-family="'IBM Plex Mono',monospace" font-size="8.5" fill="rgba(255,255,255,0.3)" letter-spacing="0.08em">180+ LIVE</text>
+          <circle cx="570" cy="431" r="3" fill="#0070F2" opacity="0.7"/>
         </svg>
       </div>
 
