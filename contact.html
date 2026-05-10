@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Solasto SAP Consulting</title>
+<meta name="description" content="Start a conversation with Solasto. A 30-minute call with one of our principal SAP architects — no pitch, no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+.contact-page{background:var(--ink);min-height:calc(100vh - 64px);position:relative;overflow:hidden;padding:80px 0 100px}
+.contact-page::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 30% 20%,rgba(0,112,242,0.22),transparent 55%),radial-gradient(ellipse at 75% 80%,rgba(0,181,165,0.14),transparent 50%);pointer-events:none}
+.contact-page .container{position:relative}
+.contact-split{display:grid;grid-template-columns:1fr 1.15fr;gap:64px;align-items:start}
+.contact-left h1{font-size:clamp(34px,4.5vw,54px);font-weight:700;letter-spacing:-0.03em;line-height:1.06;color:#fff;margin-bottom:20px}
+.contact-left p{font-size:17px;color:rgba(255,255,255,0.7);line-height:1.6;margin-bottom:36px;max-width:48ch}
+.contact-channels{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
+.channel{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;transition:border-color .2s}
+.channel:hover{border-color:rgba(0,112,242,0.5)}
+.channel .ch-icon{width:36px;height:36px;border-radius:9px;background:rgba(0,112,242,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.channel .ch-label{font-size:12px;color:rgba(255,255,255,0.45);font-family:'IBM Plex Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.channel .ch-val{font-size:14px;color:#fff;font-weight:600}
+.contact-trust{display:flex;flex-direction:column;gap:10px}
+.contact-trust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65)}
+.contact-trust-item::before{content:"✓";width:20px;height:20px;border-radius:50%;background:rgba(0,181,165,0.2);color:#00B5A5;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+@media(max-width:900px){.contact-split{grid-template-columns:1fr;gap:48px}}
+@media(max-width:640px){.contact-page{padding:56px 0 72px}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo"><span class="logo-mark"></span>Solasto</a>
+  <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links">
+    <a href="services.html">Services</a>
+    <a href="talent.html">Staffing</a>
+    <a href="about.html">About</a>
+    <a href="#">Careers</a>
+    <a href="contact.html" class="btn btn-primary active">Talk to Us</a>
+  </div>
+</nav>
+
+<!-- CONTACT PAGE -->
+<div class="contact-page" id="contact">
+  <div class="container">
+    <div class="contact-split">
+
+      <!-- Left: context -->
+      <div class="contact-left">
+        <div class="breadcrumb" style="margin-bottom:28px">
+          <a href="index.html" style="color:rgba(255,255,255,0.45)">Home</a>
+          <span style="color:rgba(255,255,255,0.25)">/</span>
+          <span style="color:rgba(255,255,255,0.7)">Contact</span>
+        </div>
+        <h1>Bring us your hardest <span class="grad">SAP problem.</span></h1>
+        <p>A thirty-minute call with one of our principal architects. No pitch deck. No discovery questionnaire. Just a working conversation about what you're trying to fix, run, or hire for.</p>
+
+        <div class="contact-channels">
+          <a href="mailto:info@solasto.co.in" class="channel">
+            <div class="ch-icon">✉</div>
+            <div><div class="ch-label">General Enquiries</div><div class="ch-val">info@solasto.co.in</div></div>
+          </a>
+          <a href="mailto:hr@solasto.co.in" class="channel">
+            <div class="ch-icon">🎓</div>
+            <div><div class="ch-label">Implementation &amp; Consulting</div><div class="ch-val">hr@solasto.co.in</div></div>
+          </a>
+          <a href="mailto:talent@solasto.co.in" class="channel">
+            <div class="ch-icon">👤</div>
+            <div><div class="ch-label">Staffing &amp; Recruitment</div><div class="ch-val">talent@solasto.co.in</div></div>
+          </a>
+        </div>
+
+        <div class="contact-trust">
+          <div class="contact-trust-item">Response within one business day</div>
+          <div class="contact-trust-item">No obligation — just a conversation</div>
+          <div class="contact-trust-item">SAP-certified architects on every call</div>
+          <div class="contact-trust-item">Offices in India, USA, UK &amp; UAE</div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="form-card" style="margin-top:0">
+        <h3>Start a conversation</h3>
+        <p class="form-sub">Fill in your details and we'll reach out at the time that suits you.</p>
+
+        <div id="formBanner" class="form-banner" role="alert"></div>
+
+        <form id="leadForm" class="lead-form" novalidate>
+          <div class="form-grid">
+            <div class="field" id="field-name">
+              <label for="lf-name">Full Name</label>
+              <input type="text" id="lf-name" name="name" placeholder="Jane Smith" autocomplete="name">
+              <span class="field-error" id="err-name"></span>
+            </div>
+            <div class="field" id="field-email">
+              <label for="lf-email">Work Email</label>
+              <input type="email" id="lf-email" name="email" placeholder="jane@company.com" autocomplete="email">
+              <span class="field-error" id="err-email"></span>
+            </div>
+            <div class="field" id="field-company">
+              <label for="lf-company">Company Name</label>
+              <input type="text" id="lf-company" name="company" placeholder="Acme Corp" autocomplete="organization">
+              <span class="field-error" id="err-company"></span>
+            </div>
+            <div class="field" id="field-preferredTime">
+              <label for="lf-time">Preferred Contact Time</label>
+              <select id="lf-time" name="preferredTime">
+                <option value="" disabled selected>Select a time…</option>
+                <option value="morning">Morning (9 am – 12 pm)</option>
+                <option value="afternoon">Afternoon (12 pm – 5 pm)</option>
+                <option value="evening">Evening (5 pm – 8 pm)</option>
+                <option value="anytime">Anytime</option>
+              </select>
+              <span class="field-error" id="err-preferredTime"></span>
+            </div>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">Send enquiry →</button>
+          <div class="session-count" id="sessionCount"></div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="check">✓</div>
+          <h4>We've got your message!</h4>
+          <p>Expect to hear from one of our architects within one business day. Watch <strong id="successEmail"></strong>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="logo"><span class="logo-mark"></span>Solasto</div>
+        <p>Specialist SAP consulting, support and staffing — designed by architects, built for scale, delivered globally.</p>
+        <div class="countries">INDIA · USA · UK · UAE</div>
+      </div>
+      <div class="foot-col"><h5>Services</h5><ul><li><a href="services.html#advisory">Advisory &amp; Roadmap</a></li><li><a href="services.html#impl">SAP Implementation</a></li><li><a href="services.html#migration">Migration &amp; Cloud</a></li><li><a href="services.html#ams">Managed Services</a></li><li><a href="services.html#dev">Development &amp; BTP</a></li></ul></div>
+      <div class="foot-col"><h5>Staffing</h5><ul><li><a href="talent.html">Direct Hire</a></li><li><a href="talent.html">Contract Staffing</a></li><li><a href="talent.html">Managed Pods</a></li><li><a href="talent.html">Offshore Teams</a></li></ul></div>
+      <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Solasto</a></li><li><a href="#">Careers</a></li><li><a href="about.html#work">Case Studies</a></li></ul></div>
+      <div class="foot-col"><h5>Contact</h5><ul><li><a href="mailto:info@solasto.co.in">info@solasto.co.in</a></li><li><a href="mailto:talent@solasto.co.in">talent@solasto.co.in</a></li><li><a href="contact.html">Start a conversation</a></li></ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; <span id="yr"></span> Solasto Consulting Ltd. All rights reserved.</span>
+      <span>SAP and all SAP logos are trademarks of SAP SE.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
