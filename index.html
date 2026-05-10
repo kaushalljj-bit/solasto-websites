@@ -362,6 +362,47 @@
     .foot-grid{grid-template-columns:1fr}
     .role-grid{grid-template-columns:1fr}
   }
+
+  /* ========== LEAD FORM ========== */
+  .cta-inner{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:start;text-align:left}
+  .cta-inner h2{text-align:left}
+  .cta-inner p{text-align:left;margin:0 0 28px}
+  .cta-trust{display:flex;flex-direction:column;gap:10px}
+  .cta-trust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.7)}
+  .cta-trust-item::before{content:"✓";width:20px;height:20px;border-radius:50%;background:rgba(0,181,165,0.2);color:var(--accent);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0}
+  .form-card{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12);border-radius:20px;padding:36px 32px}
+  .form-card h3{font-size:20px;font-weight:700;color:#fff;margin-bottom:6px;letter-spacing:-0.02em}
+  .form-card .form-sub{font-size:13px;color:rgba(255,255,255,0.55);margin-bottom:28px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .field{display:flex;flex-direction:column;gap:6px}
+  .field.full{grid-column:1/-1}
+  .field label{font-size:12px;font-weight:600;color:rgba(255,255,255,0.7);letter-spacing:0.04em;text-transform:uppercase}
+  .field input,.field select{
+    background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+    border-radius:10px;padding:12px 14px;font-size:15px;
+    color:#fff;font-family:inherit;width:100%;
+    transition:border-color .2s,background .2s;outline:none;
+    -webkit-appearance:none;appearance:none;
+  }
+  .field input::placeholder{color:rgba(255,255,255,0.3)}
+  .field input:focus,.field select:focus{border-color:rgba(0,112,242,0.7);background:rgba(255,255,255,0.12)}
+  .field select option{background:#1a2f50;color:#fff}
+  .field.has-error input,.field.has-error select{border-color:rgba(255,100,80,0.7);background:rgba(255,80,60,0.08)}
+  .field-error{font-size:12px;color:#ff8070;font-weight:500;margin-top:2px}
+  .form-banner{border-radius:10px;padding:12px 16px;font-size:13px;font-weight:600;margin-bottom:16px;display:none}
+  .form-banner.error{background:rgba(255,80,60,0.15);border:1px solid rgba(255,80,60,0.3);color:#ff8070;display:block}
+  .form-banner.warn{background:rgba(255,122,69,0.15);border:1px solid rgba(255,122,69,0.3);color:#ffaa70;display:block}
+  .btn-submit{width:100%;padding:15px;border-radius:10px;background:#fff;color:var(--ink);font-weight:700;font-size:15px;border:none;cursor:pointer;transition:all .2s;margin-top:6px;font-family:inherit}
+  .btn-submit:hover:not(:disabled){transform:translateY(-1px);box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+  .btn-submit:disabled{opacity:0.6;cursor:not-allowed;transform:none}
+  .form-success{display:none;text-align:center;padding:28px 0}
+  .form-success .check{width:56px;height:56px;border-radius:50%;background:rgba(0,181,165,0.2);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:22px}
+  .form-success h4{font-size:20px;font-weight:700;color:#fff;margin-bottom:8px}
+  .form-success p{font-size:14px;color:rgba(255,255,255,0.6);line-height:1.6}
+  .lead-form.submitting{pointer-events:none;opacity:0.75}
+  .session-count{font-size:11px;color:rgba(255,255,255,0.3);text-align:right;margin-top:12px;font-family:'IBM Plex Mono',monospace}
+  @media(max-width:880px){.cta-inner{grid-template-columns:1fr;gap:40px}.form-card{padding:28px 22px}}
+  @media(max-width:640px){.form-grid{grid-template-columns:1fr}.cta-inner h2,.cta-inner p{text-align:center}.cta-trust{align-items:center}}
 </style>
 </head>
 <body>
@@ -817,14 +858,75 @@
   </div>
 </section>
 
-<!-- ========== CTA ========== -->
+<!-- ========== CTA / LEAD FORM ========== -->
 <section class="cta" id="contact">
   <div class="container-narrow">
-    <h2>Bring us your hardest <span class="grad">SAP problem.</span></h2>
-    <p>A thirty-minute call with one of our principal architects. No pitch deck. No discovery questionnaire. Just a working conversation about what you&rsquo;re trying to fix, run, or hire for.</p>
-    <div class="cta-actions">
-      <a href="mailto:hr@solasto.co.in" class="btn btn-light">Start a conversation →</a>
-      <a href="mailto:info@solasto.co.in" class="btn btn-ghost">Hire SAP talent</a>
+    <div class="cta-inner">
+
+      <!-- Left: heading + trust signals -->
+      <div>
+        <h2>Bring us your hardest <span class="grad">SAP problem.</span></h2>
+        <p>A thirty-minute call with one of our principal architects. No pitch deck. No discovery questionnaire. Just a working conversation about what you&rsquo;re trying to fix, run, or hire for.</p>
+        <div class="cta-trust">
+          <div class="cta-trust-item">Response within one business day</div>
+          <div class="cta-trust-item">No obligation &mdash; just a conversation</div>
+          <div class="cta-trust-item">SAP-certified architects on every call</div>
+        </div>
+      </div>
+
+      <!-- Right: form card -->
+      <div class="form-card">
+        <h3>Start a conversation</h3>
+        <p class="form-sub">Fill in your details and we&rsquo;ll reach out at the time that suits you.</p>
+
+        <div id="formBanner" class="form-banner" role="alert"></div>
+
+        <form id="leadForm" class="lead-form" novalidate>
+          <div class="form-grid">
+
+            <div class="field" id="field-name">
+              <label for="lf-name">Full Name</label>
+              <input type="text" id="lf-name" name="name" placeholder="Jane Smith" autocomplete="name">
+              <span class="field-error" id="err-name"></span>
+            </div>
+
+            <div class="field" id="field-email">
+              <label for="lf-email">Work Email</label>
+              <input type="email" id="lf-email" name="email" placeholder="jane@company.com" autocomplete="email">
+              <span class="field-error" id="err-email"></span>
+            </div>
+
+            <div class="field" id="field-company">
+              <label for="lf-company">Company Name</label>
+              <input type="text" id="lf-company" name="company" placeholder="Acme Corp" autocomplete="organization">
+              <span class="field-error" id="err-company"></span>
+            </div>
+
+            <div class="field" id="field-preferredTime">
+              <label for="lf-time">Preferred Contact Time</label>
+              <select id="lf-time" name="preferredTime">
+                <option value="" disabled selected>Select a time…</option>
+                <option value="morning">Morning (9 am – 12 pm)</option>
+                <option value="afternoon">Afternoon (12 pm – 5 pm)</option>
+                <option value="evening">Evening (5 pm – 8 pm)</option>
+                <option value="anytime">Anytime</option>
+              </select>
+              <span class="field-error" id="err-preferredTime"></span>
+            </div>
+
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">Send enquiry →</button>
+          <div class="session-count" id="sessionCount"></div>
+        </form>
+
+        <div class="form-success" id="formSuccess">
+          <div class="check">✓</div>
+          <h4>We&rsquo;ve got your message!</h4>
+          <p>Expect to hear from one of our architects within one business day. Keep an eye on <strong id="successEmail"></strong>.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -890,6 +992,7 @@
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
 
+  /* ── Nav hamburger ── */
   const navToggle = document.querySelector('.nav-toggle');
   const navLinks = document.querySelector('.nav-links');
   navToggle.addEventListener('click', function() {
@@ -904,6 +1007,126 @@
       navToggle.setAttribute('aria-expanded', 'false');
     });
   });
+
+  /* ── Lead form ── */
+  (function() {
+    var SESSION_KEY = 'solasto_enquiries';
+    var MAX_ENQUIRIES = 3;
+    var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var VALID_TIMES = ['morning', 'afternoon', 'evening', 'anytime'];
+
+    var form = document.getElementById('leadForm');
+    var submitBtn = document.getElementById('submitBtn');
+    var banner = document.getElementById('formBanner');
+    var formSuccess = document.getElementById('formSuccess');
+    var sessionCount = document.getElementById('sessionCount');
+
+    function getCount() { return parseInt(sessionStorage.getItem(SESSION_KEY) || '0'); }
+    function incCount() { sessionStorage.setItem(SESSION_KEY, getCount() + 1); }
+
+    function updateCounter() {
+      var remaining = MAX_ENQUIRIES - getCount();
+      if (remaining < MAX_ENQUIRIES) {
+        sessionCount.textContent = remaining + ' enquir' + (remaining === 1 ? 'y' : 'ies') + ' remaining this session';
+      }
+    }
+
+    function showBanner(msg, type) {
+      banner.textContent = msg;
+      banner.className = 'form-banner ' + type;
+    }
+
+    function clearBanner() {
+      banner.className = 'form-banner';
+      banner.textContent = '';
+    }
+
+    function setFieldError(fieldId, errId, msg) {
+      document.getElementById(fieldId).classList.add('has-error');
+      document.getElementById(errId).textContent = msg;
+    }
+
+    function clearErrors() {
+      ['name','email','company','preferredTime'].forEach(function(f) {
+        document.getElementById('field-' + f).classList.remove('has-error');
+        document.getElementById('err-' + f).textContent = '';
+      });
+    }
+
+    function validate() {
+      var name = document.getElementById('lf-name').value.trim();
+      var email = document.getElementById('lf-email').value.trim();
+      var company = document.getElementById('lf-company').value.trim();
+      var time = document.getElementById('lf-time').value;
+      var valid = true;
+
+      if (name.length < 2) { setFieldError('field-name','err-name','Full name must be at least 2 characters.'); valid = false; }
+      if (!EMAIL_RE.test(email)) { setFieldError('field-email','err-email','Please enter a valid work email.'); valid = false; }
+      if (company.length < 2) { setFieldError('field-company','err-company','Company name must be at least 2 characters.'); valid = false; }
+      if (!VALID_TIMES.includes(time)) { setFieldError('field-preferredTime','err-preferredTime','Please select a preferred contact time.'); valid = false; }
+
+      return valid;
+    }
+
+    updateCounter();
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearErrors();
+      clearBanner();
+
+      if (getCount() >= MAX_ENQUIRIES) {
+        showBanner('You’ve reached the maximum of ' + MAX_ENQUIRIES + ' enquiries for this session. Please reload the page or contact us directly at info@solasto.co.in.', 'warn');
+        return;
+      }
+
+      if (!validate()) return;
+
+      var name = document.getElementById('lf-name').value.trim();
+      var email = document.getElementById('lf-email').value.trim();
+      var company = document.getElementById('lf-company').value.trim();
+      var time = document.getElementById('lf-time').value;
+
+      form.classList.add('submitting');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch('/api/submit-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name: name, email: email, company: company, preferredTime: time })
+      })
+      .then(function(res) { return res.json().then(function(data) { return { status: res.status, data: data }; }); })
+      .then(function(r) {
+        if (r.status === 200 && r.data.success) {
+          incCount();
+          form.style.display = 'none';
+          document.getElementById('successEmail').textContent = email;
+          formSuccess.style.display = 'block';
+        } else if (r.status === 422 && r.data.errors) {
+          var errs = r.data.errors;
+          if (errs.name) setFieldError('field-name','err-name', errs.name);
+          if (errs.email) setFieldError('field-email','err-email', errs.email);
+          if (errs.company) setFieldError('field-company','err-company', errs.company);
+          if (errs.preferredTime) setFieldError('field-preferredTime','err-preferredTime', errs.preferredTime);
+          form.classList.remove('submitting');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send enquiry →';
+        } else {
+          showBanner(r.data.error || 'Something went wrong. Please try again.', 'error');
+          form.classList.remove('submitting');
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send enquiry →';
+        }
+      })
+      .catch(function() {
+        showBanner('Network error. Please check your connection and try again.', 'error');
+        form.classList.remove('submitting');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send enquiry →';
+      });
+    });
+  })();
 </script>
 
 </body>
