@@ -31,6 +31,87 @@ if (navToggle && navLinks) {
   });
 }
 
+/* ── Application form (careers page) ── */
+(function() {
+  var form = document.getElementById('applyForm');
+  if (!form) return;
+
+  var EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  var VALID_ROLES = ['ABAP Lead Developer','Technical Project Manager','BRIM / RAR Consultant','FICO Functional Consultant','SAP Integration Architect','Other / Speculative Application'];
+  var VALID_EXP  = ['1-3','3-5','5-8','8-12','12+'];
+  var applyBtn    = document.getElementById('applyBtn');
+  var banner      = document.getElementById('applyBanner');
+  var success     = document.getElementById('applySuccess');
+
+  function showBanner(msg){ banner.textContent=msg; banner.className='apply-banner error'; }
+  function clearBanner(){ banner.className='apply-banner'; banner.textContent=''; }
+
+  function setErr(fId,eId,msg){
+    var f=document.getElementById(fId); if(f) f.classList.add('has-error');
+    var e=document.getElementById(eId); if(e) e.textContent=msg;
+  }
+  function clearErrors(){
+    ['name','email','role','experience','message'].forEach(function(f){
+      var el=document.getElementById('afield-'+f); if(el) el.classList.remove('has-error');
+      var er=document.getElementById('aerr-'+f);   if(er) er.textContent='';
+    });
+  }
+  function validate(){
+    var name=document.getElementById('af-name').value.trim();
+    var email=document.getElementById('af-email').value.trim();
+    var role=document.getElementById('af-role').value;
+    var exp=document.getElementById('af-exp').value;
+    var msg=document.getElementById('af-msg').value.trim();
+    var ok=true;
+    if(name.length<2){setErr('afield-name','aerr-name','Full name must be at least 2 characters.');ok=false;}
+    if(!EMAIL_RE.test(email)){setErr('afield-email','aerr-email','Please enter a valid email address.');ok=false;}
+    if(!VALID_ROLES.includes(role)){setErr('afield-role','aerr-role','Please select a role.');ok=false;}
+    if(!VALID_EXP.includes(exp)){setErr('afield-experience','aerr-experience','Please select your experience level.');ok=false;}
+    if(msg.length<20){setErr('afield-message','aerr-message','Please write at least 20 characters.');ok=false;}
+    return ok;
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    clearErrors(); clearBanner();
+    if(!validate()) return;
+    var name=document.getElementById('af-name').value.trim();
+    var email=document.getElementById('af-email').value.trim();
+    var phone=document.getElementById('af-phone').value.trim();
+    var linkedin=document.getElementById('af-linkedin').value.trim();
+    var role=document.getElementById('af-role').value;
+    var exp=document.getElementById('af-exp').value;
+    var loc=document.getElementById('af-loc').value.trim();
+    var msg=document.getElementById('af-msg').value.trim();
+    applyBtn.disabled=true; applyBtn.textContent='Submitting…';
+    fetch('/api/submit-application',{
+      method:'POST', headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({name:name,email:email,phone:phone,linkedin:linkedin,role:role,experience:exp,location:loc,message:msg})
+    })
+    .then(function(r){ return r.json().then(function(d){ return {status:r.status,data:d}; }); })
+    .then(function(r){
+      if(r.status===200&&r.data.success){
+        form.style.display='none'; success.style.display='block';
+      } else if(r.status===422&&r.data.errors){
+        var errs=r.data.errors;
+        if(errs.name)    setErr('afield-name','aerr-name',errs.name);
+        if(errs.email)   setErr('afield-email','aerr-email',errs.email);
+        if(errs.role)    setErr('afield-role','aerr-role',errs.role);
+        if(errs.experience) setErr('afield-experience','aerr-experience',errs.experience);
+        if(errs.message) setErr('afield-message','aerr-message',errs.message);
+        applyBtn.disabled=false; applyBtn.textContent='Submit Application →';
+      } else {
+        showBanner(r.data.error||'Something went wrong. Please try again.');
+        applyBtn.disabled=false; applyBtn.textContent='Submit Application →';
+      }
+    })
+    .catch(function(){
+      showBanner('Network error. Please check your connection and try again.');
+      applyBtn.disabled=false; applyBtn.textContent='Submit Application →';
+    });
+  });
+})();
+
 /* ── Lead form (only on pages that have #leadForm) ── */
 (function() {
   var form = document.getElementById('leadForm');

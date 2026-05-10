@@ -19,8 +19,9 @@
 .contact-channels{display:flex;flex-direction:column;gap:14px;margin-bottom:40px}
 .channel{display:flex;align-items:center;gap:14px;padding:16px 20px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;transition:border-color .2s}
 .channel:hover{border-color:rgba(0,112,242,0.5)}
-.channel .ch-icon{width:36px;height:36px;border-radius:9px;background:rgba(0,112,242,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
-.channel .ch-label{font-size:12px;color:rgba(255,255,255,0.45);font-family:'IBM Plex Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
+.ch-icon-box{width:40px;height:40px;border-radius:10px;background:rgba(0,112,242,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ch-icon-box svg{width:20px;height:20px;stroke:#7DBFFF;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.channel .ch-label{font-size:11px;color:rgba(255,255,255,0.45);font-family:'IBM Plex Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:3px}
 .channel .ch-val{font-size:14px;color:#fff;font-weight:600}
 .contact-trust{display:flex;flex-direction:column;gap:10px}
 .contact-trust-item{display:flex;align-items:center;gap:10px;font-size:14px;color:rgba(255,255,255,0.65)}
@@ -39,9 +40,10 @@
   </button>
   <div class="nav-links">
     <a href="services.html">Services</a>
+    <a href="index.html#industries">Industries</a>
     <a href="talent.html">Staffing</a>
+    <a href="careers.html">Careers</a>
     <a href="about.html">About</a>
-    <a href="#">Careers</a>
     <a href="contact.html" class="btn btn-primary active">Talk to Us</a>
   </div>
 </nav>
@@ -63,16 +65,31 @@
 
         <div class="contact-channels">
           <a href="mailto:info@solasto.co.in" class="channel">
-            <div class="ch-icon">✉</div>
-            <div><div class="ch-label">General Enquiries</div><div class="ch-val">info@solasto.co.in</div></div>
+            <div class="ch-icon-box">
+              <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">General Enquiries</div>
+              <div class="ch-val">info@solasto.co.in</div>
+            </div>
           </a>
-          <a href="mailto:hr@solasto.co.in" class="channel">
-            <div class="ch-icon">🎓</div>
-            <div><div class="ch-label">Implementation &amp; Consulting</div><div class="ch-val">hr@solasto.co.in</div></div>
+          <a href="mailto:connect@solasto.co.in" class="channel">
+            <div class="ch-icon-box">
+              <svg viewBox="0 0 24 24"><path d="M20 7H4a2 2 0 00-2 2v6a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 3H8a2 2 0 00-2 2v2h12V5a2 2 0 00-2-2z"/><circle cx="12" cy="13" r="1.5"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">Consulting &amp; Implementation</div>
+              <div class="ch-val">connect@solasto.co.in</div>
+            </div>
           </a>
           <a href="mailto:talent@solasto.co.in" class="channel">
-            <div class="ch-icon">👤</div>
-            <div><div class="ch-label">Staffing &amp; Recruitment</div><div class="ch-val">talent@solasto.co.in</div></div>
+            <div class="ch-icon-box">
+              <svg viewBox="0 0 24 24"><circle cx="9" cy="7" r="4"/><path d="M3 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/><path d="M16 3.13a4 4 0 010 7.75"/><path d="M21 21v-2a4 4 0 00-3-3.85"/></svg>
+            </div>
+            <div>
+              <div class="ch-label">Staffing &amp; Talent</div>
+              <div class="ch-val">talent@solasto.co.in</div>
+            </div>
           </a>
         </div>
 
@@ -144,14 +161,29 @@
         <p>Specialist SAP consulting, support and staffing — designed by architects, built for scale, delivered globally.</p>
         <div class="countries">INDIA · USA · UK · UAE</div>
       </div>
-      <div class="foot-col"><h5>Services</h5><ul><li><a href="services.html#advisory">Advisory &amp; Roadmap</a></li><li><a href="services.html#impl">SAP Implementation</a></li><li><a href="services.html#migration">Migration &amp; Cloud</a></li><li><a href="services.html#ams">Managed Services</a></li><li><a href="services.html#dev">Development &amp; BTP</a></li></ul></div>
-      <div class="foot-col"><h5>Staffing</h5><ul><li><a href="talent.html">Direct Hire</a></li><li><a href="talent.html">Contract Staffing</a></li><li><a href="talent.html">Managed Pods</a></li><li><a href="talent.html">Offshore Teams</a></li></ul></div>
-      <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Solasto</a></li><li><a href="#">Careers</a></li><li><a href="about.html#work">Case Studies</a></li></ul></div>
-      <div class="foot-col"><h5>Contact</h5><ul><li><a href="mailto:info@solasto.co.in">info@solasto.co.in</a></li><li><a href="mailto:talent@solasto.co.in">talent@solasto.co.in</a></li><li><a href="contact.html">Start a conversation</a></li></ul></div>
+      <div class="foot-col"><h5>Services</h5><ul>
+        <li><a href="services.html#advisory">Advisory &amp; Roadmap</a></li>
+        <li><a href="services.html#impl">SAP Implementation</a></li>
+        <li><a href="services.html#migration">Migration &amp; Cloud</a></li>
+        <li><a href="services.html#ams">Managed Services</a></li>
+        <li><a href="services.html#dev">Development &amp; BTP</a></li>
+      </ul></div>
+      <div class="foot-col"><h5>Company</h5><ul>
+        <li><a href="about.html">About Solasto</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="careers.html">Careers</a></li>
+        <li><a href="about.html#work">Case Studies</a></li>
+        <li><a href="talent.html">Staffing</a></li>
+      </ul></div>
+      <div class="foot-col"><h5>Contact</h5><ul>
+        <li><a href="mailto:info@solasto.co.in">info@solasto.co.in</a></li>
+        <li><a href="mailto:connect@solasto.co.in">connect@solasto.co.in</a></li>
+        <li><a href="mailto:talent@solasto.co.in">talent@solasto.co.in</a></li>
+        <li><a href="contact.html">Start a conversation</a></li>
+      </ul></div>
     </div>
     <div class="foot-bottom">
       <span>&copy; <span id="yr"></span> Solasto Consulting Ltd. All rights reserved.</span>
-      <span>SAP and all SAP logos are trademarks of SAP SE.</span>
     </div>
   </div>
 </footer>

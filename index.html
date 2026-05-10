@@ -11,8 +11,6 @@
 <link rel="stylesheet" href="styles.css">
 <style>
 /* ── Landing-page specific ── */
-.services-teaser .svc-grid{grid-template-columns:repeat(3,1fr)}
-.services-teaser .see-all{display:flex;justify-content:center;margin-top:36px}
 .why-inline{background:#fff}
 .why-inline .why-grid{grid-template-columns:repeat(4,1fr)}
 @media(max-width:1100px){.why-inline .why-grid{grid-template-columns:repeat(2,1fr)}}
@@ -24,9 +22,6 @@
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .hero-visual-wrap{animation:float 6s ease-in-out infinite}
 .hex-core{animation:hexPulse 3s ease-in-out infinite}
-.flow-dot{animation:flowDot 2.4s ease-in-out infinite}
-.flow-dot2{animation:flowDot 2.4s ease-in-out infinite;animation-delay:.8s}
-.flow-dot3{animation:flowDot 2.4s ease-in-out infinite;animation-delay:1.6s}
 .node-glow{animation:nodeGlow 2s ease-in-out infinite}
 </style>
 </head>
@@ -40,9 +35,10 @@
   </button>
   <div class="nav-links">
     <a href="services.html">Services</a>
+    <a href="index.html#industries">Industries</a>
     <a href="talent.html">Staffing</a>
+    <a href="careers.html">Careers</a>
     <a href="about.html">About</a>
-    <a href="#">Careers</a>
     <a href="contact.html" class="btn btn-primary">Talk to Us</a>
   </div>
 </nav>
@@ -71,48 +67,18 @@
         </div>
       </div>
 
-      <!-- SVG Illustration — SAP Ecosystem Dashboard -->
+      <!-- SVG Illustration -->
       <div class="hero-visual">
         <svg viewBox="0 0 520 448" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SAP ecosystem diagram showing S/4HANA connected to Finance, SuccessFactors, Supply Chain, BTP, Ariba and Sales modules">
           <defs>
-            <!-- Core gradient: blue → teal -->
-            <linearGradient id="g-main" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stop-color="#0070F2"/>
-              <stop offset="100%" stop-color="#00B5A5"/>
-            </linearGradient>
-            <!-- Left-side line gradient -->
-            <linearGradient id="g-line-l" x1="100%" y1="0%" x2="0%" y2="0%">
-              <stop offset="0%" stop-color="#0070F2" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#0070F2" stop-opacity="0.15"/>
-            </linearGradient>
-            <!-- Right-side line gradient -->
-            <linearGradient id="g-line-r" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#00B5A5" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#00B5A5" stop-opacity="0.15"/>
-            </linearGradient>
-            <!-- Diagonal gradients -->
-            <linearGradient id="g-line-tl" x1="100%" y1="100%" x2="0%" y2="0%">
-              <stop offset="0%" stop-color="#0070F2" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#0070F2" stop-opacity="0.1"/>
-            </linearGradient>
-            <linearGradient id="g-line-tr" x1="0%" y1="100%" x2="100%" y2="0%">
-              <stop offset="0%" stop-color="#00B5A5" stop-opacity="0.8"/>
-              <stop offset="100%" stop-color="#00B5A5" stop-opacity="0.1"/>
-            </linearGradient>
-            <!-- Hex glow filter -->
-            <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%">
-              <feGaussianBlur stdDeviation="8" result="blur"/>
-              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-            <!-- Subtle card shadow -->
-            <filter id="f-card" x="-10%" y="-10%" width="120%" height="120%">
-              <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0070F2" flood-opacity="0.2"/>
-            </filter>
-            <!-- Dot grid pattern -->
-            <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
-              <circle cx="14" cy="14" r="1" fill="rgba(255,255,255,0.05)"/>
-            </pattern>
-            <!-- Animated paths (in defs so they don't render) -->
+            <linearGradient id="g-main" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0070F2"/><stop offset="100%" stop-color="#00B5A5"/></linearGradient>
+            <linearGradient id="g-line-l" x1="100%" y1="0%" x2="0%" y2="0%"><stop offset="0%" stop-color="#0070F2" stop-opacity="0.8"/><stop offset="100%" stop-color="#0070F2" stop-opacity="0.15"/></linearGradient>
+            <linearGradient id="g-line-r" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00B5A5" stop-opacity="0.8"/><stop offset="100%" stop-color="#00B5A5" stop-opacity="0.15"/></linearGradient>
+            <linearGradient id="g-line-tl" x1="100%" y1="100%" x2="0%" y2="0%"><stop offset="0%" stop-color="#0070F2" stop-opacity="0.8"/><stop offset="100%" stop-color="#0070F2" stop-opacity="0.1"/></linearGradient>
+            <linearGradient id="g-line-tr" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#00B5A5" stop-opacity="0.8"/><stop offset="100%" stop-color="#00B5A5" stop-opacity="0.1"/></linearGradient>
+            <filter id="f-glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="8" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            <filter id="f-card" x="-10%" y="-10%" width="120%" height="120%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#0070F2" flood-opacity="0.2"/></filter>
+            <pattern id="dots" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="14" cy="14" r="1" fill="rgba(255,255,255,0.05)"/></pattern>
             <path id="ap1" d="M 201,193 C 165,175 140,130 138,88"/>
             <path id="ap2" d="M 319,193 C 355,175 380,130 382,88"/>
             <path id="ap3" d="M 197,228 L 148,228"/>
@@ -120,151 +86,87 @@
             <path id="ap5" d="M 201,263 C 165,285 140,330 138,368"/>
             <path id="ap6" d="M 319,263 C 355,285 380,330 382,368"/>
           </defs>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- PANEL BACKGROUND                    -->
-          <!-- ═══════════════════════════════════ -->
           <rect width="520" height="448" rx="20" fill="#0A1F3D"/>
-          <!-- Dot grid overlay -->
           <rect width="520" height="448" rx="20" fill="url(#dots)"/>
-          <!-- Top radial glow -->
           <ellipse cx="260" cy="224" rx="180" ry="150" fill="#0070F2" opacity="0.07"/>
           <ellipse cx="260" cy="224" rx="100" ry="80"  fill="#00B5A5" opacity="0.05"/>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- TOP STATUS BAR                      -->
-          <!-- ═══════════════════════════════════ -->
           <rect x="0" y="0" width="520" height="36" rx="20" fill="rgba(255,255,255,0.04)"/>
           <rect x="0" y="20" width="520" height="16" fill="rgba(255,255,255,0.04)"/>
           <rect x="0" y="20" width="520" height="1" fill="rgba(255,255,255,0.08)"/>
-          <!-- Live indicator -->
           <circle cx="22" cy="18" r="5" fill="#00B5A5" opacity="0.9"/>
-          <circle cx="22" cy="18" r="5" fill="#00B5A5" opacity="0.4">
-            <animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/>
-            <animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/>
-          </circle>
+          <circle cx="22" cy="18" r="5" fill="#00B5A5" opacity="0.4"><animate attributeName="r" values="5;9;5" dur="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.4;0;0.4" dur="2s" repeatCount="indefinite"/></circle>
           <text x="34" y="23" font-family="'IBM Plex Mono',monospace" font-size="10" font-weight="500" fill="rgba(255,255,255,0.6)" letter-spacing="0.08em">SAP ECOSYSTEM · LIVE</text>
-          <!-- Window dots (right) -->
-          <circle cx="484" cy="18" r="4" fill="rgba(255,255,255,0.12)"/>
-          <circle cx="498" cy="18" r="4" fill="rgba(255,255,255,0.12)"/>
-          <circle cx="512" cy="18" r="4" fill="rgba(255,255,255,0.12)"/>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- CONNECTION LINES (drawn under nodes) -->
-          <!-- ═══════════════════════════════════ -->
-          <!-- Top-left diagonal → FI Finance -->
+          <circle cx="484" cy="18" r="4" fill="rgba(255,255,255,0.12)"/><circle cx="498" cy="18" r="4" fill="rgba(255,255,255,0.12)"/><circle cx="512" cy="18" r="4" fill="rgba(255,255,255,0.12)"/>
           <path d="M 201,193 C 165,175 140,130 138,88" stroke="url(#g-line-tl)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <!-- Top-right diagonal → SuccessFactors -->
           <path d="M 319,193 C 355,175 380,130 382,88" stroke="url(#g-line-tr)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <!-- Left horizontal → Supply Chain -->
           <path d="M 197,228 L 148,228" stroke="url(#g-line-l)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <!-- Right horizontal → BTP -->
           <path d="M 323,228 L 372,228" stroke="url(#g-line-r)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <!-- Bottom-left diagonal → Ariba -->
           <path d="M 201,263 C 165,285 140,330 138,368" stroke="url(#g-line-tl)" stroke-width="1.5" stroke-dasharray="5 4"/>
-          <!-- Bottom-right diagonal → Sales & CX -->
           <path d="M 319,263 C 355,285 380,330 382,368" stroke="url(#g-line-tr)" stroke-width="1.5" stroke-dasharray="5 4"/>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- ANIMATED DATA FLOW DOTS             -->
-          <!-- ═══════════════════════════════════ -->
           <circle r="3.5" fill="#0070F2"><animateMotion dur="2.2s" repeatCount="indefinite"><mpath href="#ap1"/></animateMotion></circle>
           <circle r="3.5" fill="#00B5A5"><animateMotion dur="2.2s" begin="0.8s" repeatCount="indefinite"><mpath href="#ap2"/></animateMotion></circle>
           <circle r="3"   fill="#0070F2"><animateMotion dur="1.6s" begin="0.2s" repeatCount="indefinite"><mpath href="#ap3"/></animateMotion></circle>
           <circle r="3"   fill="#00B5A5"><animateMotion dur="1.6s" begin="0.9s" repeatCount="indefinite"><mpath href="#ap4"/></animateMotion></circle>
           <circle r="3.5" fill="#0070F2"><animateMotion dur="2.4s" begin="0.4s" repeatCount="indefinite"><mpath href="#ap5"/></animateMotion></circle>
           <circle r="3.5" fill="#00B5A5"><animateMotion dur="2.4s" begin="1.4s" repeatCount="indefinite"><mpath href="#ap6"/></animateMotion></circle>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- CENTRAL S/4HANA HEXAGON             -->
-          <!-- Pointy-top, center(260,228), r=66   -->
-          <!-- Top(260,162) TR(317,195) BR(317,261) -->
-          <!-- Bot(260,294) BL(203,261) TL(203,195) -->
-          <!-- ═══════════════════════════════════ -->
-          <!-- Outer glow -->
-          <polygon points="260,158 319,193 319,263 260,298 201,263 201,193"
-            fill="#0070F2" opacity="0.12" filter="url(#f-glow)"/>
-          <!-- Main hex -->
-          <polygon class="hex-core"
-            points="260,162 317,195 317,261 260,294 203,261 203,195"
-            fill="url(#g-main)"/>
-          <!-- Inner hex frame -->
-          <polygon
-            points="260,180 301,203 301,249 260,272 219,249 219,203"
-            fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
-          <!-- Center text -->
+          <polygon points="260,158 319,193 319,263 260,298 201,263 201,193" fill="#0070F2" opacity="0.12" filter="url(#f-glow)"/>
+          <polygon class="hex-core" points="260,162 317,195 317,261 260,294 203,261 203,195" fill="url(#g-main)"/>
+          <polygon points="260,180 301,203 301,249 260,272 219,249 219,203" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
           <text x="260" y="220" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="15" font-weight="600" fill="#fff" letter-spacing="0.02em">S/4HANA</text>
           <text x="260" y="240" text-anchor="middle" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="500" fill="rgba(255,255,255,0.65)" letter-spacing="0.12em">CORE PLATFORM</text>
-          <!-- Solasto dot -->
           <circle cx="260" cy="258" r="4" fill="rgba(255,255,255,0.5)"/>
-
-          <!-- Node circles on hex vertices (connection points) -->
           <circle cx="203" cy="195" r="4.5" fill="#0070F2" stroke="#0A1F3D" stroke-width="1.5"/>
           <circle cx="317" cy="195" r="4.5" fill="#00B5A5" stroke="#0A1F3D" stroke-width="1.5"/>
           <circle cx="197" cy="228" r="4.5" fill="#0070F2" stroke="#0A1F3D" stroke-width="1.5"/>
           <circle cx="323" cy="228" r="4.5" fill="#00B5A5" stroke="#0A1F3D" stroke-width="1.5"/>
           <circle cx="203" cy="261" r="4.5" fill="#0070F2" stroke="#0A1F3D" stroke-width="1.5"/>
           <circle cx="317" cy="261" r="4.5" fill="#00B5A5" stroke="#0A1F3D" stroke-width="1.5"/>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- MODULE CARDS                        -->
-          <!-- Each: dark rect + accent bar + code + name + desc -->
-          <!-- ═══════════════════════════════════ -->
-
-          <!-- ① FI / Finance — top left -->
+          <!-- FI -->
           <rect x="22" y="60" width="116" height="56" rx="10" fill="#142B4F" stroke="rgba(0,112,242,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="22" y="60" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="22" y="60" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="35" y="79" font-family="'IBM Plex Mono',monospace" font-size="13" font-weight="700" fill="#4DA8FF" letter-spacing="0.02em">FI</text>
           <text x="55" y="79" font-family="'Plus Jakarta Sans',sans-serif" font-size="13" font-weight="700" fill="#fff">Finance</text>
-          <text x="35" y="96" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">General Ledger · AP/AR</text>
-          <text x="35" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.3)">Controlling · Treasury</text>
-
-          <!-- ② SF / SuccessFactors — top right -->
+          <text x="35" y="96" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">General Ledger · AP/AR</text>
+          <text x="35" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Controlling · Treasury</text>
+          <!-- SF -->
           <rect x="382" y="60" width="116" height="56" rx="10" fill="#142B4F" stroke="rgba(0,181,165,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="495" y="60" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="495" y="60" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="395" y="79" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.02em">SF</text>
           <text x="415" y="79" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">SuccessFactors</text>
-          <text x="395" y="96" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">HCM · Talent · Payroll</text>
-          <text x="395" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.3)">Learning · Recruiting</text>
-
-          <!-- ③ SCM / Supply Chain — left middle -->
+          <text x="395" y="96" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">HCM · Talent · Payroll</text>
+          <text x="395" y="109" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Learning · Recruiting</text>
+          <!-- SCM -->
           <rect x="14" y="200" width="134" height="56" rx="10" fill="#142B4F" stroke="rgba(0,112,242,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="14" y="200" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="14" y="200" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="27" y="219" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DA8FF" letter-spacing="0.02em">SCM</text>
           <text x="58" y="219" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">Supply Chain</text>
-          <text x="27" y="236" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">MM · EWM · TM · IBP</text>
-          <text x="27" y="249" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.3)">Procurement · Logistics</text>
-
-          <!-- ④ BTP / Platform — right middle -->
+          <text x="27" y="236" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">MM · EWM · TM · IBP</text>
+          <text x="27" y="249" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Procurement · Logistics</text>
+          <!-- BTP -->
           <rect x="372" y="200" width="134" height="56" rx="10" fill="#142B4F" stroke="rgba(0,181,165,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="503" y="200" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="503" y="200" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="385" y="219" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.02em">BTP</text>
           <text x="415" y="219" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">SAP Platform</text>
-          <text x="385" y="236" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">Extensions · Integration</text>
-          <text x="385" y="249" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.3)">Analytics · Automation</text>
-
-          <!-- ⑤ Ariba / Procurement — bottom left -->
+          <text x="385" y="236" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Extensions · Integration</text>
+          <text x="385" y="249" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.3)">Analytics · Automation</text>
+          <!-- Ariba -->
           <rect x="22" y="340" width="116" height="56" rx="10" fill="#142B4F" stroke="rgba(0,112,242,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="22" y="340" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="22" y="340" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="35" y="359" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DA8FF" letter-spacing="0.02em">ARIBA</text>
           <text x="35" y="376" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">Procurement</text>
-          <text x="35" y="389" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">Sourcing · Supplier Mgmt</text>
-
-          <!-- ⑥ CX / Sales — bottom right -->
+          <text x="35" y="389" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Sourcing · Supplier Mgmt</text>
+          <!-- CX -->
           <rect x="382" y="340" width="116" height="56" rx="10" fill="#142B4F" stroke="rgba(0,181,165,0.35)" stroke-width="1" filter="url(#f-card)"/>
-          <rect x="495" y="340" width="3"   height="56" rx="1" fill="url(#g-main)"/>
+          <rect x="495" y="340" width="3" height="56" rx="1" fill="url(#g-main)"/>
           <text x="395" y="359" font-family="'IBM Plex Mono',monospace" font-size="11" font-weight="700" fill="#4DD9CC" letter-spacing="0.02em">SD · CX</text>
           <text x="395" y="376" font-family="'Plus Jakarta Sans',sans-serif" font-size="12" font-weight="700" fill="#fff">Sales &amp; CX</text>
-          <text x="395" y="389" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" font-weight="400" fill="rgba(255,255,255,0.45)">Order-to-Cash · Commerce</text>
-
-          <!-- ═══════════════════════════════════ -->
-          <!-- BOTTOM STATUS ROW                   -->
-          <!-- ═══════════════════════════════════ -->
+          <text x="395" y="389" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="rgba(255,255,255,0.45)">Order-to-Cash · Commerce</text>
+          <!-- Bottom bar -->
           <rect x="0" y="412" width="520" height="36" rx="20" fill="rgba(255,255,255,0.03)"/>
           <rect x="0" y="412" width="520" height="1"  fill="rgba(255,255,255,0.07)"/>
           <circle cx="22" cy="430" r="3" fill="#00B5A5" opacity="0.7"/>
-          <text x="34" y="434" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="400" fill="rgba(255,255,255,0.35)" letter-spacing="0.06em">6 MODULES CONNECTED</text>
-          <text x="390" y="434" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="400" fill="rgba(255,255,255,0.35)" letter-spacing="0.06em">180+ LIVE</text>
+          <text x="34" y="434" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.35)" letter-spacing="0.06em">6 MODULES CONNECTED</text>
+          <text x="390" y="434" font-family="'IBM Plex Mono',monospace" font-size="9" fill="rgba(255,255,255,0.35)" letter-spacing="0.06em">180+ LIVE</text>
           <circle cx="510" cy="430" r="3" fill="#0070F2" opacity="0.6"/>
         </svg>
       </div>
@@ -290,68 +192,363 @@
   </div>
 </div>
 
-<!-- SERVICES TEASER -->
-<section class="services services-teaser">
+<!-- SERVICES SHOWCASE -->
+<section class="svc-showcase">
   <div class="container">
-    <div class="section-eyebrow">What we do</div>
-    <h2 class="section-h">SAP services, <span class="grad">end&nbsp;to&nbsp;end.</span></h2>
-    <p class="section-sub">Six service lines, one accountable partner. Engage at any phase of your SAP lifecycle.</p>
-
-    <div class="svc-grid">
-      <div class="svc-card">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 11h16M11 3l8 8-8 8" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <h3>Advisory &amp; Roadmap</h3>
-        <p class="lead">Business case, target architecture, and a phased plan you can take to your board.</p>
-        <ul><li>Current-state assessment</li><li>S/4HANA &amp; cloud roadmap</li><li>Programme business case</li></ul>
+    <div class="svc-showcase-inner">
+      <div class="svc-showcase-left">
+        <div class="section-eyebrow">What we do</div>
+        <h2>Six service lines. <span class="grad">One accountable partner.</span></h2>
+        <p>Engage Solasto at any phase of your SAP lifecycle — from the first business case to decade-long managed operations.</p>
+        <a href="services.html" class="btn btn-primary">Explore all services →</a>
       </div>
-      <div class="svc-card">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="2"/><rect x="12" y="3" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="2"/><rect x="3" y="12" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="2"/><rect x="12" y="12" width="7" height="7" rx="1.5" stroke="#fff" stroke-width="2"/></svg>
-        </div>
-        <h3>SAP Implementation</h3>
-        <p class="lead">End-to-end S/4HANA delivery using SAP Activate and our sector accelerators.</p>
-        <ul><li>Greenfield &amp; brownfield</li><li>Selective data transition</li><li>Multi-country rollouts</li></ul>
+      <div class="svc-list">
+        <a href="services.html#advisory" class="svc-row">
+          <div class="svc-row-num">01</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">Advisory &amp; Roadmap</div>
+            <p>Business case, target architecture, and a phased plan you can take to your board.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
+        <a href="services.html#impl" class="svc-row">
+          <div class="svc-row-num">02</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">SAP Implementation</div>
+            <p>End-to-end S/4HANA delivery using SAP Activate — greenfield, brownfield, or selective.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
+        <a href="services.html#migration" class="svc-row">
+          <div class="svc-row-num">03</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">Migration &amp; Cloud</div>
+            <p>RISE with SAP, BTP migration, and system consolidation — de-risked and documented.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
+        <a href="services.html#ams" class="svc-row">
+          <div class="svc-row-num">04</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">Application Managed Services</div>
+            <p>SLA-backed 24×7 support that keeps your SAP estate stable and continuously improving.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
+        <a href="services.html#dev" class="svc-row">
+          <div class="svc-row-num">05</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">Development &amp; BTP</div>
+            <p>Custom ABAP, Fiori apps, integrations, and cloud extensions — built by certified architects.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
+        <a href="talent.html" class="svc-row">
+          <div class="svc-row-num">06</div>
+          <div class="svc-row-body">
+            <div class="svc-row-name">SAP Staffing &amp; Recruitment</div>
+            <p>5,000+ vetted SAP profiles. 48-hour shortlists. Contract, permanent, or managed pods.</p>
+          </div>
+          <div class="svc-row-arrow">→</div>
+        </a>
       </div>
-      <div class="svc-card">
-        <div class="ico">
-          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="8" stroke="#fff" stroke-width="2"/><path d="M11 7v4l3 3" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>
-        </div>
-        <h3>Application Managed Services</h3>
-        <p class="lead">SLA-backed run-mode support that keeps your SAP estate stable and improving.</p>
-        <ul><li>24×7 follow-the-sun support</li><li>L1 to L4 tiered service</li><li>Continuous improvement</li></ul>
-      </div>
-    </div>
-
-    <div class="see-all">
-      <a href="services.html" class="btn btn-outline-blue">View all six service lines →</a>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<div class="statsbar">
+<div class="grad-divider"></div>
+
+<!-- INDUSTRIES -->
+<section class="industries-home" id="industries">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat"><div class="v">180<span class="accent">+</span></div><div class="l">Implementations delivered</div></div>
-      <div class="stat"><div class="v">45<span class="accent">+</span></div><div class="l">AMS clients under SLA</div></div>
-      <div class="stat"><div class="v">98<span class="accent">%</span></div><div class="l">On-time go-lives</div></div>
-      <div class="stat"><div class="v">5K<span class="accent">+</span></div><div class="l">SAP talent profiles</div></div>
+    <div class="section-eyebrow">Industries we serve</div>
+    <h2 class="section-h">Deep expertise across <span class="grad">10+ sectors.</span></h2>
+    <p class="section-sub" style="color:rgba(255,255,255,0.6)">SAP looks different in every industry. Our consultants bring sector-specific process knowledge — not just technical skills.</p>
+
+    <div class="ind-home-grid">
+      <div class="ind-home-card featured">
+        <div class="ind-icon">🏭</div>
+        <h4>Manufacturing &amp; Engineering</h4>
+        <p>Plant maintenance, production planning, quality management and end-to-end supply chain across discrete and process manufacturing.</p>
+        <div class="ind-modules"><span>PP</span><span>PM</span><span>QM</span><span>EWM</span><span>IBP</span></div>
+      </div>
+      <div class="ind-home-card featured">
+        <div class="ind-icon">🏦</div>
+        <h4>Banking &amp; Financial Services</h4>
+        <p>Core banking integration, regulatory reporting, treasury management and financial consolidation across global BFSI organisations.</p>
+        <div class="ind-modules"><span>FI</span><span>CO</span><span>FSCM</span><span>BRIM</span><span>RAR</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">🛒</div>
+        <h4>Retail &amp; Consumer Goods</h4>
+        <p>Omni-channel order management, merchandise planning and SAP Customer Experience deployments.</p>
+        <div class="ind-modules"><span>SD</span><span>CX</span><span>MM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">💊</div>
+        <h4>Pharmaceuticals &amp; Life Sciences</h4>
+        <p>GxP-compliant implementations, batch management, regulatory traceability and serialisation.</p>
+        <div class="ind-modules"><span>QM</span><span>WM</span><span>MM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">⚡</div>
+        <h4>Energy &amp; Utilities</h4>
+        <p>Billing, device management, subscription billing via BRIM, and IS-U to S/4HANA Utilities migrations.</p>
+        <div class="ind-modules"><span>BRIM</span><span>IS-U</span><span>PM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">🛢️</div>
+        <h4>Oil, Gas &amp; Chemicals</h4>
+        <p>Asset management, plant maintenance, HANA-based production planning and refinery operations.</p>
+        <div class="ind-modules"><span>PM</span><span>PP</span><span>MM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">🏥</div>
+        <h4>Healthcare &amp; Public Sector</h4>
+        <p>Patient billing, procurement, HR transformation and compliance-driven finance for public bodies.</p>
+        <div class="ind-modules"><span>FI</span><span>HR</span><span>MM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">✈️</div>
+        <h4>Aerospace &amp; Defence</h4>
+        <p>MRO, defence contract accounting, long-term project management and asset lifecycle tracking.</p>
+        <div class="ind-modules"><span>PS</span><span>PM</span><span>CO</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">🚗</div>
+        <h4>Automotive</h4>
+        <p>JIT/JIS scheduling, variant configuration, dealer management and supply chain collaboration.</p>
+        <div class="ind-modules"><span>PP</span><span>SD</span><span>SCM</span></div>
+      </div>
+      <div class="ind-home-card">
+        <div class="ind-icon">📡</div>
+        <h4>Telecom &amp; Media</h4>
+        <p>Subscription billing, convergent invoicing, revenue assurance and BRIM-led transformation.</p>
+        <div class="ind-modules"><span>BRIM</span><span>RAR</span><span>SD</span></div>
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<div class="grad-divider"></div>
+
+<!-- NUMBERS BAND -->
+<section class="numbers-band">
+  <div class="container">
+    <div class="numbers-row">
+      <div class="number-block">
+        <span class="n-val">180+</span>
+        <div class="n-label">Implementations delivered across 30+ countries</div>
+        <div class="n-sub">Since 2004</div>
+      </div>
+      <div class="number-block">
+        <span class="n-val">98%</span>
+        <div class="n-label">On-time go-lives across all fixed-outcome engagements</div>
+        <div class="n-sub">Proven delivery</div>
+      </div>
+      <div class="number-block">
+        <span class="n-val">45+</span>
+        <div class="n-label">Enterprise AMS clients operating under SLA today</div>
+        <div class="n-sub">Run mode</div>
+      </div>
+      <div class="number-block">
+        <span class="n-val">5K+</span>
+        <div class="n-label">Verified SAP professionals in our talent network</div>
+        <div class="n-sub">All modules</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GLOBAL PRESENCE -->
+<section class="presence">
+  <div class="container">
+    <div class="presence-head">
+      <div>
+        <div class="section-eyebrow">Global presence</div>
+        <h2>Offices in four <span class="grad">strategic markets.</span></h2>
+      </div>
+      <p>Our delivery model combines senior on-site architects with deep offshore capability — giving you the governance of a local partner with the economics of a global operation.</p>
+    </div>
+
+    <!-- World map SVG -->
+    <div class="map-wrap">
+      <svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="World map showing Solasto offices in India, USA, UK and UAE">
+        <defs>
+          <radialGradient id="mg1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#EEF3F8"/><stop offset="100%" stop-color="#DDE8F0"/></radialGradient>
+          <filter id="pin-glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <!-- Background -->
+        <rect width="900" height="400" fill="url(#mg1)"/>
+        <!-- Grid lines -->
+        <line x1="0" y1="100" x2="900" y2="100" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <line x1="0" y1="200" x2="900" y2="200" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <line x1="0" y1="300" x2="900" y2="300" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <line x1="225" y1="0" x2="225" y2="400" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <line x1="450" y1="0" x2="450" y2="400" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <line x1="675" y1="0" x2="675" y2="400" stroke="rgba(0,112,242,0.06)" stroke-width="1"/>
+        <!-- Equator -->
+        <line x1="0" y1="200" x2="900" y2="200" stroke="rgba(0,112,242,0.12)" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+        <!-- CONTINENTS (simplified geographic paths) -->
+        <!-- North America -->
+        <path d="M 68,48 Q 110,38 148,42 L 182,50 Q 218,52 258,68 L 282,90 Q 308,100 318,115 L 312,132 Q 298,148 278,155 L 258,168 Q 245,180 235,178 L 225,162 Q 208,152 188,148 L 158,135 Q 132,122 112,108 L 88,88 Q 65,72 68,48 Z" fill="rgba(0,112,242,0.15)" stroke="rgba(0,112,242,0.25)" stroke-width="0.8"/>
+        <!-- Greenland -->
+        <path d="M 292,18 Q 325,10 355,18 L 368,35 Q 375,52 360,62 L 338,68 Q 315,72 295,62 L 285,48 Z" fill="rgba(0,112,242,0.1)" stroke="rgba(0,112,242,0.2)" stroke-width="0.8"/>
+        <!-- South America -->
+        <path d="M 200,278 Q 228,272 252,285 L 265,310 Q 275,342 268,368 L 252,388 Q 235,400 215,398 Q 195,395 182,380 L 170,355 Q 162,328 165,305 Z" fill="rgba(0,112,242,0.15)" stroke="rgba(0,112,242,0.25)" stroke-width="0.8"/>
+        <!-- UK + Ireland -->
+        <path d="M 398,73 Q 412,68 418,80 L 412,95 Q 405,100 397,95 Z" fill="rgba(0,112,242,0.2)" stroke="rgba(0,112,242,0.3)" stroke-width="0.8"/>
+        <!-- Europe -->
+        <path d="M 408,88 Q 445,68 480,72 L 510,88 Q 520,108 510,125 L 492,132 Q 468,140 445,132 L 425,128 Q 408,118 408,100 Z" fill="rgba(0,112,242,0.15)" stroke="rgba(0,112,242,0.25)" stroke-width="0.8"/>
+        <!-- Scandinavia -->
+        <path d="M 438,48 Q 458,42 468,55 L 462,75 Q 452,85 440,80 Z" fill="rgba(0,112,242,0.12)" stroke="rgba(0,112,242,0.2)" stroke-width="0.8"/>
+        <!-- Africa -->
+        <path d="M 415,128 Q 452,112 490,120 L 515,145 Q 532,170 528,200 L 532,230 Q 535,262 522,290 L 505,312 Q 488,328 465,330 L 440,328 Q 415,318 402,295 L 392,268 Q 382,240 388,210 L 385,180 Q 385,152 402,135 Z" fill="rgba(0,112,242,0.12)" stroke="rgba(0,112,242,0.22)" stroke-width="0.8"/>
+        <!-- Arabian Peninsula -->
+        <path d="M 518,148 Q 545,138 565,152 L 575,172 Q 578,190 562,200 L 542,202 Q 525,195 518,178 Z" fill="rgba(0,112,242,0.15)" stroke="rgba(0,112,242,0.25)" stroke-width="0.8"/>
+        <!-- India -->
+        <path d="M 572,148 Q 600,140 622,155 L 636,175 Q 642,196 628,215 L 610,228 Q 590,235 572,220 L 558,202 Q 548,180 558,162 Z" fill="rgba(0,112,242,0.18)" stroke="rgba(0,112,242,0.3)" stroke-width="0.8"/>
+        <!-- Russia + North Asia -->
+        <path d="M 510,45 Q 578,32 652,35 L 726,42 Q 776,52 800,72 L 812,95 Q 812,118 795,130 L 770,138 Q 742,142 712,135 L 682,128 Q 652,132 625,128 L 598,118 Q 572,108 555,95 L 538,78 Q 518,60 510,45 Z" fill="rgba(0,112,242,0.1)" stroke="rgba(0,112,242,0.18)" stroke-width="0.8"/>
+        <!-- East Asia -->
+        <path d="M 688,128 Q 722,120 752,132 L 775,155 Q 788,178 776,198 L 755,210 Q 735,218 712,208 L 692,193 Q 672,180 665,162 Z" fill="rgba(0,112,242,0.13)" stroke="rgba(0,112,242,0.22)" stroke-width="0.8"/>
+        <!-- Japan -->
+        <path d="M 776,98 Q 790,92 800,106 L 795,120 Q 785,126 778,118 Z" fill="rgba(0,112,242,0.15)" stroke="rgba(0,112,242,0.25)" stroke-width="0.8"/>
+        <!-- Australia -->
+        <path d="M 665,268 Q 706,252 748,262 L 778,282 Q 798,305 788,332 L 770,350 Q 745,362 720,358 L 695,350 Q 668,336 652,312 L 645,288 Z" fill="rgba(0,112,242,0.12)" stroke="rgba(0,112,242,0.22)" stroke-width="0.8"/>
+
+        <!-- CONNECTION LINES (arcs between offices) -->
+        <path d="M 265,109 Q 357,55 450,87" stroke="rgba(0,112,242,0.25)" stroke-width="1.2" fill="none" stroke-dasharray="4 3"/>
+        <path d="M 450,87 Q 520,115 589,144" stroke="rgba(0,181,165,0.25)" stroke-width="1.2" fill="none" stroke-dasharray="4 3"/>
+        <path d="M 589,144 Q 611,150 632,157" stroke="rgba(0,181,165,0.3)" stroke-width="1.5" fill="none"/>
+        <path d="M 265,109 Q 450,200 632,157" stroke="rgba(0,112,242,0.12)" stroke-width="1" fill="none" stroke-dasharray="3 4"/>
+
+        <!-- OFFICE PINS -->
+        <!-- USA (New York) x=265 y=109 -->
+        <circle cx="265" cy="109" r="16" fill="rgba(0,112,242,0.12)" filter="url(#pin-glow)"/>
+        <circle cx="265" cy="109" r="16" fill="rgba(0,112,242,0.08)"><animate attributeName="r" values="16;22;16" dur="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.08;0;0.08" dur="3s" repeatCount="indefinite"/></circle>
+        <circle cx="265" cy="109" r="7" fill="#0070F2"/>
+        <circle cx="265" cy="109" r="3.5" fill="#fff"/>
+
+        <!-- UK (London) x=450 y=87 -->
+        <circle cx="450" cy="87" r="16" fill="rgba(0,112,242,0.12)" filter="url(#pin-glow)"/>
+        <circle cx="450" cy="87" r="16" fill="rgba(0,112,242,0.08)"><animate attributeName="r" values="16;22;16" dur="3s" begin="0.8s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.08;0;0.08" dur="3s" begin="0.8s" repeatCount="indefinite"/></circle>
+        <circle cx="450" cy="87" r="7" fill="#0070F2"/>
+        <circle cx="450" cy="87" r="3.5" fill="#fff"/>
+
+        <!-- UAE (Dubai) x=589 y=144 -->
+        <circle cx="589" cy="144" r="16" fill="rgba(0,181,165,0.12)" filter="url(#pin-glow)"/>
+        <circle cx="589" cy="144" r="16" fill="rgba(0,181,165,0.08)"><animate attributeName="r" values="16;22;16" dur="3s" begin="1.6s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.08;0;0.08" dur="3s" begin="1.6s" repeatCount="indefinite"/></circle>
+        <circle cx="589" cy="144" r="7" fill="#00B5A5"/>
+        <circle cx="589" cy="144" r="3.5" fill="#fff"/>
+
+        <!-- India (Mumbai) x=632 y=157 -->
+        <circle cx="632" cy="157" r="18" fill="rgba(0,181,165,0.15)" filter="url(#pin-glow)"/>
+        <circle cx="632" cy="157" r="18" fill="rgba(0,181,165,0.1)"><animate attributeName="r" values="18;26;18" dur="2.5s" begin="0.4s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.1;0;0.1" dur="2.5s" begin="0.4s" repeatCount="indefinite"/></circle>
+        <circle cx="632" cy="157" r="9" fill="#00B5A5"/>
+        <circle cx="632" cy="157" r="4" fill="#fff"/>
+
+        <!-- Labels -->
+        <text x="265" y="96" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="600" fill="#0A1F3D" letter-spacing="0.06em">USA</text>
+        <text x="450" y="74" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="600" fill="#0A1F3D" letter-spacing="0.06em">UK</text>
+        <text x="589" y="131" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="600" fill="#0A1F3D" letter-spacing="0.06em">UAE</text>
+        <text x="632" y="142" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="9" font-weight="600" fill="#0A1F3D" letter-spacing="0.06em">INDIA</text>
+
+        <!-- Legend -->
+        <circle cx="24" cy="378" r="5" fill="#0070F2"/>
+        <text x="34" y="382" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#5A6478">Consulting office</text>
+        <circle cx="140" cy="378" r="5" fill="#00B5A5"/>
+        <text x="150" y="382" font-family="'Plus Jakarta Sans',sans-serif" font-size="10" fill="#5A6478">HQ / Delivery centre</text>
+      </svg>
+    </div>
+
+    <!-- Office cards -->
+    <div class="presence-offices">
+      <div class="office-card">
+        <div class="o-country">India · HQ</div>
+        <div class="o-city">Mumbai</div>
+        <div class="o-type">Headquarters &amp; primary delivery centre</div>
+        <div class="o-services"><span>Implementation</span><span>AMS</span><span>Development</span><span>Staffing</span></div>
+      </div>
+      <div class="office-card">
+        <div class="o-country">United Kingdom</div>
+        <div class="o-city">London</div>
+        <div class="o-type">European consulting &amp; client services</div>
+        <div class="o-services"><span>Advisory</span><span>Implementation</span><span>Staffing</span></div>
+      </div>
+      <div class="office-card">
+        <div class="o-country">United Arab Emirates</div>
+        <div class="o-city">Dubai</div>
+        <div class="o-type">Middle East &amp; Africa regional hub</div>
+        <div class="o-services"><span>Implementation</span><span>AMS</span><span>Staffing</span></div>
+      </div>
+      <div class="office-card">
+        <div class="o-country">United States</div>
+        <div class="o-city">New York</div>
+        <div class="o-type">North America sales &amp; delivery</div>
+        <div class="o-services"><span>Advisory</span><span>Implementation</span><span>Staffing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- WHY SOLASTO -->
-<section class="why why-inline">
+<section class="why-alt">
   <div class="container">
     <div class="section-eyebrow">Why clients stay</div>
     <h2 class="section-h">Built different. <span class="grad">Delivered consistently.</span></h2>
-    <div class="why-grid">
-      <div class="why-card"><div class="num">/ 01</div><h4>100% SAP-focused</h4><p>No side practices. Every consultant lives and breathes SAP — no diluted attention, no generalist guesswork.</p></div>
-      <div class="why-card"><div class="num">/ 02</div><h4>Build &amp; Run, same team</h4><p>The architects who design your system are the ones who operate it in run mode. No painful handovers.</p></div>
-      <div class="why-card"><div class="num">/ 03</div><h4>SAP Activate by the book</h4><p>Every programme follows the reference methodology — phased, documented, and board-ready from day one.</p></div>
-      <div class="why-card"><div class="num">/ 04</div><h4>Pre-built IP &amp; accelerators</h4><p>Sector templates, code remediation kits and test packs cut typical effort by 20–40%.</p></div>
+    <div class="why-alt-list">
+      <div class="why-alt-item">
+        <div class="why-alt-num">01</div>
+        <div class="why-alt-title">100% SAP-Focused</div>
+        <div class="why-alt-body">No side practices. Every consultant lives and breathes SAP — no diluted attention, no generalist guesswork. When you call, you speak to someone who has been in your system before.</div>
+      </div>
+      <div class="why-alt-item">
+        <div class="why-alt-num">02</div>
+        <div class="why-alt-title">Build &amp; Run, Same Team</div>
+        <div class="why-alt-body">The architects who design your system operate it in run mode. No painful handovers, no documentation gaps, no "the build team is gone" excuses. Continuity is built into how we engage.</div>
+      </div>
+      <div class="why-alt-item">
+        <div class="why-alt-num">03</div>
+        <div class="why-alt-title">SAP Activate — By the Book</div>
+        <div class="why-alt-body">Every programme follows the reference methodology — phased, documented, board-ready from day one. We don't improvise. We apply a proven framework and adapt it where sector context demands.</div>
+      </div>
+      <div class="why-alt-item">
+        <div class="why-alt-num">04</div>
+        <div class="why-alt-title">Pre-Built IP Cuts 20–40% of Effort</div>
+        <div class="why-alt-body">Sector templates, ABAP code-remediation kits, and test packs developed over 180+ implementations. We don't start from zero — and neither should your timeline or budget.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDY TEASER -->
+<section class="case-teaser">
+  <div class="container">
+    <div class="section-eyebrow">Client outcomes</div>
+    <h2 class="section-h" style="margin-bottom:36px">What good looks like <span class="grad">in the real world.</span></h2>
+    <div class="case-teaser-card">
+      <div>
+        <div class="ct-tag">CASE STUDY · 2024</div>
+        <h3>Global S/4HANA greenfield for a FTSE 250 manufacturing group</h3>
+        <div class="ct-meta">
+          <span>Manufacturing</span>
+          <span>S/4HANA 2023</span>
+          <span>18 countries</span>
+          <span>36 months</span>
+        </div>
+        <div class="ct-results">
+          <div class="ct-result"><div class="v">34%</div><div class="l">Finance close cycle reduction</div></div>
+          <div class="ct-result"><div class="v">£2.1M</div><div class="l">Annual run cost saving</div></div>
+          <div class="ct-result"><div class="v">On time</div><div class="l">Delivered to original milestone</div></div>
+        </div>
+      </div>
+      <div class="ct-text">
+        <p>A FTSE 250 industrial manufacturer needed to retire four legacy ERP systems across 18 countries and consolidate onto a single S/4HANA instance. The programme spanned finance, supply chain, manufacturing and HR — with a hard regulatory cutover deadline in the UK and Germany.</p>
+        <p>Solasto led the global template design, data migration strategy, and hypercare operations team. We delivered the 18-country rollout on the original milestone date with zero critical post-go-live incidents and a finance close cycle reduced from 12 days to 8.</p>
+        <a href="about.html#work" class="btn btn-outline-blue" style="margin-top:12px">View all case studies →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -367,6 +564,7 @@
           <div class="cta-trust-item">Response within one business day</div>
           <div class="cta-trust-item">No obligation &mdash; just a conversation</div>
           <div class="cta-trust-item">SAP-certified architects on every call</div>
+          <div class="cta-trust-item">Offices in India, USA, UK &amp; UAE</div>
         </div>
       </div>
       <div class="form-card">
@@ -407,27 +605,22 @@
         <li><a href="services.html#ams">Managed Services</a></li>
         <li><a href="services.html#dev">Development &amp; BTP</a></li>
       </ul></div>
-      <div class="foot-col"><h5>Staffing</h5><ul>
-        <li><a href="talent.html#hire">Direct Hire</a></li>
-        <li><a href="talent.html#contract">Contract Staffing</a></li>
-        <li><a href="talent.html#tryhire">Contract-to-Hire</a></li>
-        <li><a href="talent.html#pods">Managed Pods</a></li>
-        <li><a href="talent.html#offshore">Offshore Teams</a></li>
-      </ul></div>
       <div class="foot-col"><h5>Company</h5><ul>
         <li><a href="about.html">About Solasto</a></li>
-        <li><a href="#">Careers</a></li>
+        <li><a href="index.html#industries">Industries</a></li>
+        <li><a href="careers.html">Careers</a></li>
         <li><a href="about.html#work">Case Studies</a></li>
+        <li><a href="talent.html">Staffing</a></li>
       </ul></div>
       <div class="foot-col"><h5>Contact</h5><ul>
         <li><a href="mailto:info@solasto.co.in">info@solasto.co.in</a></li>
-        <li><a href="mailto:hr@solasto.co.in">hr@solasto.co.in</a></li>
+        <li><a href="mailto:connect@solasto.co.in">connect@solasto.co.in</a></li>
         <li><a href="mailto:talent@solasto.co.in">talent@solasto.co.in</a></li>
+        <li><a href="contact.html">Start a conversation</a></li>
       </ul></div>
     </div>
     <div class="foot-bottom">
       <span>&copy; <span id="yr"></span> Solasto Consulting Ltd. All rights reserved.</span>
-      <span>SAP and all SAP logos are trademarks of SAP SE.</span>
     </div>
   </div>
 </footer>
