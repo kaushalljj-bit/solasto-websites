@@ -566,20 +566,20 @@ footer{background:var(--ink-2);color:rgba(255,255,255,0.7);padding:64px 0 28px}
 .grad-divider{height:2px;background:linear-gradient(90deg,transparent 0%,var(--blue) 30%,var(--accent) 70%,transparent 100%);opacity:0.4}
 
 /* ========== WHO WE ARE ========== */
-.wwa-section{padding:88px 0;background:#fff}
+.wwa-section{padding:88px 0;background:var(--blue-tint);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 .wwa-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .wwa-left .section-eyebrow{margin-bottom:14px}
 .wwa-left h2{font-size:clamp(28px,3.2vw,42px);font-weight:700;letter-spacing:-0.02em;line-height:1.1;margin-bottom:20px}
 .wwa-left p{font-size:16px;color:var(--muted);line-height:1.65;margin-bottom:16px}
 .wwa-left p:last-of-type{margin-bottom:28px}
-.wwa-right{display:flex;flex-direction:column;gap:0}
-.wwa-item{display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;padding:22px 0;border-bottom:1px solid var(--border)}
-.wwa-item:first-child{padding-top:0}
-.wwa-item:last-child{border-bottom:none;padding-bottom:0}
-.wwa-num{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;color:var(--blue);padding-top:4px;letter-spacing:0.08em}
-.wwa-content h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:6px;letter-spacing:-0.01em}
-.wwa-content p{font-size:14px;color:var(--muted);line-height:1.6;margin:0}
+.wwa-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.wwa-card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:26px 22px;transition:all .25s ease;display:flex;flex-direction:column}
+.wwa-card:hover{border-color:var(--blue);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.wwa-card-badge{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),var(--accent));color:#fff;font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;margin-bottom:14px}
+.wwa-card h4{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-0.01em}
+.wwa-card p{font-size:13px;color:var(--muted);line-height:1.6;margin:0;flex:1}
 @media(max-width:900px){.wwa-grid{grid-template-columns:1fr;gap:48px}}
+@media(max-width:580px){.wwa-cards{grid-template-columns:1fr}}
 
 /* ========== HOW WE WORK ========== */
 .method-section{padding:88px 0;background:var(--blue-tint);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
